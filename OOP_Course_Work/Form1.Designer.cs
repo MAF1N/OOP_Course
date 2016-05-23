@@ -47,25 +47,31 @@ namespace OOP_Course_Work
             this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printBaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeStorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.SearchByName = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.storageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.resultBoxDataTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,10 +152,10 @@ namespace OOP_Course_Work
             // resultBoxDataTable
             // 
             this.resultBoxDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.resultBoxDataTable.Location = new System.Drawing.Point(12, 213);
+            this.resultBoxDataTable.Location = new System.Drawing.Point(3, 151);
             this.resultBoxDataTable.Name = "resultBoxDataTable";
             this.resultBoxDataTable.ReadOnly = true;
-            this.resultBoxDataTable.Size = new System.Drawing.Size(595, 203);
+            this.resultBoxDataTable.Size = new System.Drawing.Size(584, 210);
             this.resultBoxDataTable.TabIndex = 2;
             // 
             // DateOfIncome
@@ -189,38 +195,29 @@ namespace OOP_Course_Work
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
-            this.changeStorageToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(625, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(627, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadBaseToolStripMenuItem,
             this.fileToolStripMenuItem,
-            this.changeProductToolStripMenuItem,
+            this.loadBaseToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // loadBaseToolStripMenuItem
-            // 
-            this.loadBaseToolStripMenuItem.Name = "loadBaseToolStripMenuItem";
-            this.loadBaseToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.loadBaseToolStripMenuItem.Text = "Load Base";
-            this.loadBaseToolStripMenuItem.Click += new System.EventHandler(this.loadBaseToolStripMenuItem_Click);
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printBaToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // printBaToolStripMenuItem
@@ -229,24 +226,19 @@ namespace OOP_Course_Work
             this.printBaToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.printBaToolStripMenuItem.Text = "Print Waybill";
             // 
-            // changeProductToolStripMenuItem
+            // loadBaseToolStripMenuItem
             // 
-            this.changeProductToolStripMenuItem.Name = "changeProductToolStripMenuItem";
-            this.changeProductToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.changeProductToolStripMenuItem.Text = "Change Product";
+            this.loadBaseToolStripMenuItem.Name = "loadBaseToolStripMenuItem";
+            this.loadBaseToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.loadBaseToolStripMenuItem.Text = "Load Base";
+            this.loadBaseToolStripMenuItem.Click += new System.EventHandler(this.loadBaseToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // changeStorageToolStripMenuItem
-            // 
-            this.changeStorageToolStripMenuItem.Name = "changeStorageToolStripMenuItem";
-            this.changeStorageToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
-            this.changeStorageToolStripMenuItem.Text = "Change Storage";
             // 
             // helpToolStripMenuItem
             // 
@@ -258,16 +250,18 @@ namespace OOP_Course_Work
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(599, 174);
+            this.tabControl1.Size = new System.Drawing.Size(601, 395);
             this.tabControl1.TabIndex = 17;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightCyan;
             this.tabPage1.Controls.Add(this.CostTextBox);
+            this.tabPage1.Controls.Add(this.resultBoxDataTable);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label2);
@@ -283,21 +277,31 @@ namespace OOP_Course_Work
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(591, 148);
+            this.tabPage1.Size = new System.Drawing.Size(593, 369);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add product";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.LightCyan;
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.SearchByName);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(591, 148);
+            this.tabPage2.Size = new System.Drawing.Size(593, 369);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search Product";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 153);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(584, 210);
+            this.dataGridView1.TabIndex = 6;
             // 
             // label7
             // 
@@ -317,18 +321,52 @@ namespace OOP_Course_Work
             this.SearchByName.TabIndex = 4;
             this.SearchByName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.pictureBox1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(593, 369);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Show Storage";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(7, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Display";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(6, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(581, 318);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            // 
             // storageBindingSource
             // 
             this.storageBindingSource.DataSource = typeof(OOP_Course_Work.Storage);
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(625, 428);
+            this.ClientSize = new System.Drawing.Size(627, 433);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.resultBoxDataTable);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
@@ -343,6 +381,9 @@ namespace OOP_Course_Work
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,13 +412,11 @@ namespace OOP_Course_Work
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeStorageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadBaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printBaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeProductToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -385,6 +424,11 @@ namespace OOP_Course_Work
         private System.Windows.Forms.TextBox SearchByName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
 
