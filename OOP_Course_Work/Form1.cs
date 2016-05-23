@@ -4,13 +4,14 @@ using System.Windows.Forms;
 using System.Data;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace OOP_Course_Work
 {
     public partial class Form1 : Form
     {
         private DataTable table = new DataTable();
-
+        private Storage store;
         private bool CheckDateFile(string s)
         {
             string[] currdate = DateTime.Today.ToString("d").Split('.');
@@ -77,6 +78,7 @@ namespace OOP_Course_Work
                         Storage1.AddProduct(p);
                     }
                 }
+                store = Storage1;
                 return Storage1;
             }
         }
@@ -100,11 +102,13 @@ namespace OOP_Course_Work
                 DisplayProduct(ps[i]);
             }
             resultBoxDataTable.DataSource = table;
+            dataGridView1.DataSource = table;
         }
 
         public Form1()
         {
             InitializeComponent();
+            store = LoadStorageBase();
             DateOfIncome.Format = DateTimePickerFormat.Custom;
             DateOfIncome.CustomFormat = "dd.MM.yyyy";
             EndDate.Format = DateTimePickerFormat.Custom;
@@ -131,7 +135,7 @@ namespace OOP_Course_Work
             {
                 DisplayProduct(i);
             }
-            resultBoxDataTable.DataSource = table;
+            dataGridView1.DataSource = table;
         }
 
         private void ClearAllTextBoxes()
@@ -257,6 +261,34 @@ namespace OOP_Course_Work
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changeStorageToolStripMenuItem_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            store.Width = 500;
+            store.Length = 300;
+            Graphics g = pictureBox1.CreateGraphics();
+            store.DisplayStorage(g);
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(store.Check(e.X,e.Y)!=null)
+            {
+                toolTip2.ToolTipTitle = store.Check(e.X, e.Y).ToString();
+                toolTip2.ToolTipIcon = ToolTipIcon.Info;
+                toolTip2.SetToolTip(pictureBox1, "Product");
+            }
+
+        }
+
+        private void toolTip2_Popup(object sender, PopupEventArgs e)
         {
 
         }
