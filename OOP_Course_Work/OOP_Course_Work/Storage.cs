@@ -6,55 +6,36 @@ using System.Threading.Tasks;
 
 namespace OOP_Course_Work
 {
-
-    class Storage
+    class Room
     {
-        private Product[] storageProducts = new Product[10000];
-        int lastFree=0;
-        public Storage()
+        private Package[][] Packages;
+        private int floorNumber;
+        private int roomWidth;
+        private int roomLength;
+        private int roomHeight;
+        public Room()
         {
-
+            floorNumber = 0;
+            roomWidth = 100;
+            roomHeight = 100;
+            roomLength = 100;
         }
-        public int StorageCapacity
+        public Room(int f, int w, int l, int h)
         {
-            get { return storageProducts.Length; }
-            private set { }
-        }
-        public int SearchByName(string name)
-        {
-            for (int i = 0; i < lastFree; i++)
-                if (name == storageProducts[i].Name)
-                    return i;
-            return -1;
-        }
-        public int SearchByCode(string c)
-        {
-            for (int i = 0; i < lastFree; i++)
-                if (Convert.ToInt32(c) == storageProducts[i].code)
-                    return i;
-            return -1;
-        }
-        public bool AddProduct(Product p)
-        {
-            if (lastFree < storageProducts.Length)
+            floorNumber = f;
+            roomWidth = w;
+            roomLength = l;
+            roomHeight = h;
+            Packages = new Package[w][];
+            for (int i=0; i<w; i++)
             {
-                storageProducts[lastFree] = p;
-                storageProducts[lastFree].code = lastFree;
-                lastFree++;
-                return true;
+                Packages[i] = new Package[l];
             }
-            else return false;
         }
-        public Product[] GetAllProducts()
-        {
-            Product[] retVal = new Product[lastFree];
-            for (int i = 0; i < lastFree; i++)
-                retVal[i] = storageProducts[i];
-            return retVal;
-        }
-        public int FreePositions()
-        {
-            return storageProducts.Length - lastFree;
-        }
+        public int FloorNumber { get { return floorNumber; } }
+        public int RoomWidth { get { return roomWidth; } }
+        public int RoomLength { get { return roomLength; } }
+        public int RoomHeight { get { return roomHeight; } }
+
     }
 }
